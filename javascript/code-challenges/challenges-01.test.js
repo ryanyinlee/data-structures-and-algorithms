@@ -122,17 +122,18 @@ The inventory is formatted like this:
 
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
 ------------------------------------------------------------------------------------------------ */
-
+// With help from Spencer Tower and Erik Savage
 const createList = (availableItems) => {
-
- //const newArray = ['apples', 'pears', 'bananas'];
-
-  //const newArray =[];
-  const newArray = availableItems.forEach();
+  //const test = available => (available === true);
+  const newArray =[];
+  availableItems.forEach(fruitObject => {  if (fruitObject.available === true ) {newArray.push(fruitObject.name) } })
+;
 
   
   return newArray;
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 STRETCH - CHALLENGE 7
