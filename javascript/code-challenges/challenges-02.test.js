@@ -9,16 +9,7 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 ------------------------------------------------------------------------------------------------ */
 
 const raisedToTheThird = (arr) => {
-  let thirdsArray = [];
-  
-  arr.forEach( (num) => {
-    thirdsArray.push(Math.pow(num, 3)) ;
-  });
-
-  
-
-  return thirdsArray;
-  
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -28,15 +19,7 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-  let addArray = [];
-
-  addArray = arr.map(add);
-  
-  function add(num) {
-    return num + 1;
-  }
-
-  return addArray;
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,16 +29,7 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 ------------------------------------------------------------------------------------------------ */
 
 const addQuestion = (arr) => {
-
-  let withQuestionMark = [];
-  withQuestionMark = arr.map(i => i + '?');
-// https://stackoverflow.com/questions/20498409/adding-text-to-beginning-of-each-array-element
-
-  // function addQ (string) {
-  //   return [string, '?'].join();
-  // }
-
-  return withQuestionMark;
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,15 +43,7 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
-  let returnArray = [];
-
-  for (let i = 0; i < arr.length; i +=1) {
-    returnArray.push(Math.pow(2, arr[i]));
-  }
-  
-
-
-  return returnArray;
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -87,14 +53,7 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
-  let returnArray = [];
-
-  arr.forEach( (num) => {
-    returnArray.push(Math.pow(2, num)) ;
-  });
-
-
-  return returnArray;
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -104,16 +63,7 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  let returnArray = [];
-
-  returnArray = arr.map(powerOf);
-  
-  function powerOf(num) {
-    return (Math.pow(2, num));
-  }
-
-
-  return returnArray;
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -234,7 +184,11 @@ const snorlaxStats = {
 };
 
 const extractStats = (arr) => {
-  // Solution code here...
+ 
+  return arr.map(snorStat => { 
+    return {name: snorStat.stat.name , total: (snorStat.effort + snorStat.baseStat) }
+  });
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -335,7 +289,7 @@ xdescribe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return an array containing objects with name and total values', () => {
     expect(extractStats(snorlaxStats.stats)).toStrictEqual([
       { name: 'speed', total: 35, },
