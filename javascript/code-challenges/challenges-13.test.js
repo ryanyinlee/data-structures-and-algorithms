@@ -139,7 +139,6 @@ const allHappy = (arr) => {
     counter +=1;
   }
  }
-
  if (counter === arr.length) {
   return true;
 } else {
