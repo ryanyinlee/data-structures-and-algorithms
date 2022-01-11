@@ -19,5 +19,17 @@ Any methods should be clean, reusable, abstract component parts to the challenge
 ## Whiteboard Process
 ![whiteboard](code1whiteboard.PNG)
 
+![whiteboard2](code1pseudocode.PNG)
+
 ## Approach & Efficiency
-<!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->
+I initially took this using the .push method and array.length but realized I was using 1) a new array and 2) utilizing a built in method.
+
+Testing:
+
+Should test with arrays that have an odd and even number of elements.
+
+Length should not make a difference.
+
+If array.length is not allowed as a language method, how would I find the length of the array?
+
+Use a while loop that adds to a counter, go through the array until there is no value returned?
