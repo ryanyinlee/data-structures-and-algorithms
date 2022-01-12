@@ -15,25 +15,9 @@ gives us: [2,4,5,6,-8]
 gives us: [42,8,15,16,23,42]
 
 ## Whiteboard Process
-<!-- Embedded whiteboard image -->
-
-https://codefellows.github.io/common_curriculum/data_structures_and_algorithms/Whiteboard_Workflow.html
-
-Problem Domain
-
-Edge Cases
-
-Visual
-
-Big O
-
-Algorithm
-
-Pseudo
-
-Code
-
-Verification
+![](code2whiteboard.PNG)
 
 ## Approach & Efficiency
-<!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->
+The approach I took was to move up all the values from the "top" half of the existing array up one.
+
+This requires a loop which may not be as efficient and could run into problems with odd numbered arrays.
