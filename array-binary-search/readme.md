@@ -27,7 +27,7 @@ Binary Search Algorithm: https://en.wikipedia.org/wiki/Binary_search_algorithm
 
 
 ## Whiteboard Process
-<!-- Embedded whiteboard image -->
+![](code3whiteboard.PNG)
 
 WhiteBoard Workflow: https://codefellows.github.io/common_curriculum/data_structures_and_algorithms/Whiteboard_Workflow.html
 
@@ -40,4 +40,4 @@ WhiteBoard Workflow: https://codefellows.github.io/common_curriculum/data_struct
 7. Test
 
 ## Approach & Efficiency
-<!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->
+This should require a while statement that continues until the distance between midpoints is 0.
