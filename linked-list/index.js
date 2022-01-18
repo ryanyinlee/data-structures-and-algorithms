@@ -1,59 +1,106 @@
 
-'use strict'
+'use strict';
 
 class Node {
     constructor(value) {
-        this.value = value;
-        this.next = null;
+        this.value = value; 
+        this.next = null; 
     }
 
 }
 
 class LinkedList {
+
     constructor() {
         this.head = null;
     }
 
-    // take in a value and add it to our linked list
-
-    // efficiency:
-    // time 0(n) - linear time efficiency
-    // space 0(1) - constant space efficiency
-
-    append(value) {
-        // empty linked list {head: null}
-        let node = new Node(value);
-        if(this.head === null) {
-            this.head = node;
+    
+    
+    add (value) {
+        let newNode = new Node(value);
+        
+        if (this.head===null){
+            this.head = newNode;
             return;
         }
         
         let currentNode = this.head;
 
-        // traversal of a linked list. important!
-
-        while (currentNode) {
+        while(currentNode.next){
             currentNode = currentNode.next;
         }
-        
-        // have reached the end when we are out of the loop
 
+        currentNode.next = newNode;
+    
     }
+
+    // Arguments: value
+// Returns: nothing
+// Adds a new node with that value to the head of the list with an O(1) Time performance.
+insert (value) {
+    let newNode = new Node(value);
+    this.head = newNode;
 }
 
+    // Arguments: value
+// Returns: Boolean
+// Indicates whether that value exists as a Node’s value somewhere within the list.
+    includes (value){
+
+        
+    let test;
+    let currentNode = this.head;
+
+    while(currentNode.next){
+        if (currentNode.value === value) {
+            test = true;
+        } else {test = false};
+        currentNode = currentNode.next;
+    }
+
+    return test;
+}
+
+// to string
+// Arguments: none
+// Returns: a string representing all the values in the Linked List, formatted as:
+// "{ a } -> { b } -> { c } -> NULL"
+
+    toString() {
+        let currentNode = this.head;
+        let returnString = '';
+
+        while(currentNode) {
+            returnString += '{ ' + currentNode.value + ' } ->'
+            currentNode = currentNode.next;
+        }
+
+        returnString += 'null';
+
+        return returnString = '';
+    }
+
+}
+
+
+
+
 let list = new LinkedList();
+console.log(list.toString());
+list.insert('should be first');
+list.add('test');
+list.add(13);
+list.add(20);
 
-// let node = new Node(value);
+let isTrue = list.includes(13);
+console.log(isTrue);
 
-// let node2 = new Node(13);
-// let node3 = new Node(20);
-// let node4 = new Node(33);
+let isFalse = list.includes(14);
+console.log(isFalse);
 
-// list.head = node;
-// list.head.next = node2;
-// list.head.next.next = node3;
-// list.head.next.next.next = node4;
+
 
 console.log(JSON.stringify(list));
-list.add('Jacob');
-list.add()
+
+module.exports = LinkedList;

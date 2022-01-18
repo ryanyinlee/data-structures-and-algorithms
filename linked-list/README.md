@@ -39,7 +39,18 @@ Will return false when searching for a value in the linked list that does not ex
 Can properly return a collection of all the values that exist in the linked list
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+TIME: O(n) as the linkedlist is linear, and is constant. linear time efficiency
+
+SPACE: O(1) as we add one space each time
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
+
+## UML
+
+![](codechallenge05uml.PNG)
+
+## Credits
+
+Consult from jamiguel23 for tests.
