@@ -18,13 +18,6 @@ class LinkedList {
     let newNode = new Node(value);
     this.head= newNode;
     
-    let currentNode = this.head;
-
-    while (currentNode.next) {
-      currentNode = currentNode.next;
-    }
-
-    currentNode.next = newNode;
     this.size+=1;
     return;
 }
@@ -159,6 +152,30 @@ append(value) {
     return returnString;
   }
 
+//   kth from end
+// argument: a number, k, as a parameter.
+// Return the node’s value that is k places from the tail of the linked list.
+// You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+findAtKth(index) {
+  // get the kth number
+    let kth = this.size - index;
+
+    let current = this.head;
+    let count = 0;
+
+    while (current) {
+        if(count == kth) {
+          console.log("kth should be: " + current.value);
+          return current.value;
+        }
+        count +=1;
+        current = current.next;
+    }
+
+    return null;
+}
+
+
   printListData() {
     let current = this.head;
 
@@ -178,20 +195,22 @@ list.insert("should be first");
 list.add(13);
 list.insertBefore(13, 100);
 list.add(20);
-list.append("should be last");
+
 list.add(23);
 
 
 
-list.insertAfter(23, 24);
 
-let isTrue = list.includes(13);
-console.log(isTrue);
+list.append("should be last");
 
-let isFalse = list.includes(14);
-console.log(isFalse);
+// let isTrue = list.includes(13);
+// console.log(isTrue);
+
+// let isFalse = list.includes(14);
+// console.log(isFalse);
 
 //console.log(list.toString());
 //console.log(JSON.stringify(list));
+list.findAtKth(0);
 list.printListData();
 module.exports = LinkedList;

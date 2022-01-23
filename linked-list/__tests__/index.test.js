@@ -139,7 +139,7 @@ describe(" Can successfully insert a node before a node located in the middle of
   });
 });
 
-describe("Can successfully insert a node before the first node of a linked list", () => {
+xdescribe("Can successfully insert a node before the first node of a linked list", () => {
   it("Should have insertBefore function at the front.", () => {
     let list = new LinkedList();
 
@@ -173,5 +173,68 @@ describe("Can successfully insert a node after the last node of the linked list"
     list.add("c");
     list.insertAfter("c", "after");
     expect(list.toString()).toEqual("{ a } -> { b } -> { c } -> { after } -> NULL");
+  });
+});
+
+
+describe("Where k is greater than the length of the linked list", () => {
+  it("Should do nothing.", () => {
+    let list = new LinkedList();
+
+    list.add("a");
+    list.add("b");
+    list.add("c");
+    list.findAtKth(10);
+    expect(list.findAtKth(3)).toEqual(null);
+  });
+});
+
+
+describe("Where k and the length of the list are the same", () => {
+  it("Should return null.", () => {
+    let list = new LinkedList();
+
+    list.add("a");
+    list.add("b");
+    list.add("c");
+    list.findAtKth(3);
+    expect(list.findAtKth(3)).toEqual(null);
+  });
+});
+
+
+describe("Where k is not a positive integer", () => {
+  it("Should return null.", () => {
+    let list = new LinkedList();
+
+    list.add("a");
+    list.add("b");
+    list.add("c");
+    list.findAtKth(-3);
+    expect(list.findAtKth(-3)).toEqual(null);
+  });
+});
+
+
+describe("Where the linked list is of a size 1", () => {
+  it("Should return null.", () => {
+    let list = new LinkedList();
+
+    list.add(1);
+    list.findAtKth(0);
+    expect(list.findAtKth(1)).toEqual(null);
+  });
+});
+
+// todo
+xdescribe("“Happy Path” where k is not at the end, but somewhere in the middle of the linked list", () => {
+  it("Should find work to find something in the middle..", () => {
+    let list = new LinkedList();
+
+    list.add("a");
+    list.add("b");
+    list.add("c");
+    list.findAtKth(2);
+    expect(list.findAtKth(-3)).toEqual("b");
   });
 });
