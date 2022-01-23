@@ -29,7 +29,7 @@ describe("The head property will properly point to the first node in the linked 
 
 
 describe("Can properly insert multiple nodes into the linked list", () => {
-    it("Should have should be first as head", () => {
+    it("Multiple nodes can be added.", () => {
       let list = new LinkedList();
   
       list.add(1);
@@ -42,7 +42,7 @@ describe("Can properly insert multiple nodes into the linked list", () => {
   });
 
 describe("Can properly insert into the linked list", () => {
-  it("Should have should be first as head", () => {
+  it("Insert function should work.", () => {
     let list = new LinkedList();
 
     list.add("test");
@@ -54,7 +54,7 @@ describe("Can properly insert into the linked list", () => {
 });
 
 describe("Will return true when finding a value within the linked list that exists/does not exist", () => {
-    it("should be able to find a value in the list", () => {
+    it("should be able to find a value in the list and return true or false if it exists or not", () => {
       let list = new LinkedList();
   
       list.add("test");
@@ -96,3 +96,82 @@ describe("Will return true when finding a value within the linked list that exis
       expect(list.toString()).toEqual("{ a } -> { b } -> { c } -> NULL");
     });
   });
+
+
+  describe("Can successfully add a node to the end of the linked list", () => {
+    it("Should have d added to end using append.", () => {
+      let list = new LinkedList();
+  
+      list.add("a");
+      list.add("b");
+      list.add("c");
+      list.append('d');
+          
+      expect(list.toString()).toEqual("{ a } -> { b } -> { c } -> { d } -> NULL");
+    });
+  });
+
+
+describe("Can successfully add multiple nodes to the end of a linked list", () => {
+  it("Should have d and e using append.", () => {
+    let list = new LinkedList();
+
+    list.add("a");
+    list.add("b");
+    list.add("c");
+    list.append('d');
+    list.append('e');
+    expect(list.toString()).toEqual("{ a } -> { b } -> { c } -> { d } -> { e } -> NULL");
+  });
+});
+
+
+describe(" Can successfully insert a node before a node located in the middle of a linked list", () => {
+  it("Should have 100 inserted before 1 using insertBefore.", () => {
+    let list = new LinkedList();
+
+    list.add(1);
+    list.add(2);
+    list.insertBefore(2, 100);
+    list.add(3);
+    console.log(JSON.stringify(list));
+    expect(list.toString()).toEqual("{ 1 } -> { 100 } -> { 2 } -> { 3 } -> NULL");
+  });
+});
+
+describe("Can successfully insert a node before the first node of a linked list", () => {
+  it("Should have insertBefore function at the front.", () => {
+    let list = new LinkedList();
+
+    list.add(1);
+    list.insertBefore(100);
+    list.add(2);    
+    list.add(3);
+    console.log(JSON.stringify(list));
+    expect(list.toString()).toEqual("{ 100 } -> { 1 } -> { 2 } -> { 3 } -> NULL");
+  });
+});
+
+describe("Can successfully insert after a node in the middle of the linked list", () => {
+  it("Should have insertAFter work in the middle.", () => {
+    let list = new LinkedList();
+
+    list.add("a");
+    list.add("b");
+    list.insertAfter("b", "after")
+    list.add("c");
+    expect(list.toString()).toEqual("{ a } -> { b } -> { after } -> { c } -> NULL");
+  });
+});
+
+describe("Can successfully insert a node after the last node of the linked list", () => {
+  it("Should have should be first as head", () => {
+    let list = new LinkedList();
+
+    list.add("a");
+    list.add("b");
+    list.add("c");
+    list.insertAfter("c", "after");
+    expect(list.toString()).toEqual("{ a } -> { b } -> { c } -> { after } -> NULL");
+  });
+});
