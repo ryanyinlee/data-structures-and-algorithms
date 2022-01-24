@@ -50,8 +50,13 @@ Returns: Boolean indicating whether or not the queue is empty
 
 ## Approach & Efficiency
 
+Stacks and queues are very similar to each other, just in different ways. 
 
 ## API
+
+Used traversy for a quick rundown: https://www.youtube.com/watch?v=wtynhUwS5hI
+
+Used most of the demo code, with minor tweaks. Most of the work was in tests.
 
 # Zip Lists
 
