@@ -186,31 +186,5 @@ findAtKth(index) {
 }
 }
 
-let list = new LinkedList();
 
-
-// manual testing
-list.insert("should be first");
-
-list.add(13);
-list.insertBefore(13, 100);
-list.add(20);
-
-list.add(23);
-
-
-
-
-list.append("should be last");
-
-// let isTrue = list.includes(13);
-// console.log(isTrue);
-
-// let isFalse = list.includes(14);
-// console.log(isFalse);
-
-//console.log(list.toString());
-//console.log(JSON.stringify(list));
-list.findAtKth(0);
-list.printListData();
 module.exports = LinkedList;
