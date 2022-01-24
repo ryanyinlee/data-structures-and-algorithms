@@ -1,6 +1,28 @@
+# Challenge Summary
+Write a function called zip lists
+Arguments: 2 linked lists
+Return: New Linked List, zipped as noted below
+Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the the zipped list.
+Try and keep additional space down to O(1)
+You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
+https://www.geeksforgeeks.org/merge-a-linked-list-into-another-linked-list-at-alternate-positions/
+
+Using this for assistance.
+?
+## Whiteboard Process
+![](codechallenge08uml.PNG)
+
+## Approach & Efficiency
+Edge cases: Uneven sides (list 1 with only 2 nodes, and list 2 with 3 nodes and vice versa)
+
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
+
+
+
 # Singly Linked List
 Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
-
 
 
 ## Challenge
