@@ -38,6 +38,10 @@ Stacks and pseudoqueues have similar efficiency.
 ## Solution
 run pseudoqueue.js and npm test.
 
+## Credit
+
+Helped with jamiguel and eriksavage.
+
 
 # Stacks and Queues
 
