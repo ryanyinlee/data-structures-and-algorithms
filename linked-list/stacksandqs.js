@@ -7,6 +7,8 @@ class Node {
   }
 }
 
+
+
 class Stack {
     constructor() {
       this.top = null;
@@ -127,6 +129,46 @@ isEmpty() {
             return false;
         }
     }
+  }
+
+  class PseudoQueue {
+    constructor() {
+      this.top = null;
+    }
+    
+    enqueue(value) {
+      let node = new Node(value);
+  
+      if (this.front === null) {
+        this.front = node;
+        this.back = node;
+        return;
+      } else {
+        this.back.next = node;
+        this.back = node;
+        // let temp = this.back;
+        return;
+      }
+    }
+  
+    dequeue() {
+  
+      let nodeToRemove = this.front;
+  
+      // change front to be the next node!
+      this.front = nodeToRemove.next;
+  
+      // get rid of the next value from our nodeToRemove
+      nodeToRemove.next = null;
+  
+      // if this is true, there are no nodes after the front.
+      if (!this.front) {
+        this.back = null;
+      }
+  
+      return nodeToRemove.value;
+    }
+  
   }
 
 
