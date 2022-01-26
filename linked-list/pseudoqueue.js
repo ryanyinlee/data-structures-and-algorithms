@@ -7,26 +7,18 @@ class Node {
   }
 }
 
+// don't have to use both stacks - metty82
+// one method is easy
 
 class PseudoQueue {
     constructor() {
       this.front = new Stack;
       this.back = new Stack;
     }
-    
+    // from metty82
     enqueue(value) {
-      //let node = new Node(value);
-  
-      if (this.front === null) {
-        this.front = node;
-        this.back = node;
-        return;
-      } else {
-        this.back.next = node;
-        this.back = node;
-        // let temp = this.back;
-        return;
-      }
+     let newStack = this.front;
+     newStack.push(value);
     }
   
     dequeue() {
