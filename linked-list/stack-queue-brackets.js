@@ -7,8 +7,6 @@ class Node {
   }
 }
 
-
-
 class Stack {
     constructor() {
       this.top = null;
@@ -34,12 +32,16 @@ class Stack {
   
     // remove the top node
     pop() {
-  
+      
       // grab the first node
-      let temp = this.top;
-      this.top = temp.next;
-      temp.next = null;
-      return temp.value;
+      if (this.top){
+        let temp = this.top;
+        this.top = temp.next;
+        temp.next = null;
+        return temp.value;
+      }
+     return false;
+
     }
 
     //peek
@@ -70,120 +72,70 @@ isEmpty() {
 
   }
   
+ 
+
+function bracketCheck(data) {
+
+let stack = new Stack();
+
+for (let i = 0; i < data.length; i+=1){
   
-  ///////////////////////////////////////////////////////////////////
-  
-  class Queue {
-    constructor() {
-      this.front = null;
-      this.back = null;
-    }
-  
-    enqueue(value) {
-      let node = new Node(value);
-  
-      if (this.front === null) {
-        this.front = node;
-        this.back = node;
-        return;
-      } else {
-        this.back.next = node;
-        this.back = node;
-        // let temp = this.back;
-        return;
-      }
-    }
-  
-    dequeue() {
-  
-      let nodeToRemove = this.front;
-  
-      // change front to be the next node!
-      this.front = nodeToRemove.next;
-  
-      // get rid of the next value from our nodeToRemove
-      nodeToRemove.next = null;
-  
-      // if this is true, there are no nodes after the front.
-      if (!this.front) {
-        this.back = null;
-      }
-  
-      return nodeToRemove.value;
-    }
-  
-    // return the value at the front of the queue
-    peek() {
-        if (this.front == null){
-            return null;
-        } else {
-            return this.front.value;
-        }
-    }
-  
-    // returns a boolean whether or not the Queue is empty
-    isEmpty() {
-        if (this.front == null) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+  let compare = data[i];
+
+  console.log(compare);
+
+  if (compare === '(' || compare === '[' || compare === '{') {
+    stack.push(compare);   
+    console.log(JSON.stringify(stack));
+    continue;
   }
 
-  class PseudoQueue {
-    constructor() {
-      this.top = null;
+  if (stack.length === 0){
+    return false;
+  }
+
+  let checker;
+
+  switch (compare){
+    case ')':
+        checker = stack.pop();
+        if (checker == '{' || checker == '[')
+            return false;
+        break;
+
+    case '}':
+        checker = stack.pop();
+        if (checker == '(' || checker == '[')
+            return false;
+        break;
+
+    case ']':
+        checker = stack.pop();
+        if (checker == '(' || checker == '{')
+            return false;
+        break;
+    }
+
+    if (checker){
+      return true;
     }
     
-    enqueue(value) {
-      let node = new Node(value);
-  
-      if (this.front === null) {
-        this.front = node;
-        this.back = node;
-        return;
-      } else {
-        this.back.next = node;
-        this.back = node;
-        // let temp = this.back;
-        return;
-      }
-    }
-  
-    dequeue() {
-  
-      let nodeToRemove = this.front;
-  
-      // change front to be the next node!
-      this.front = nodeToRemove.next;
-  
-      // get rid of the next value from our nodeToRemove
-      nodeToRemove.next = null;
-  
-      // if this is true, there are no nodes after the front.
-      if (!this.front) {
-        this.back = null;
-      }
-  
-      return nodeToRemove.value;
-    }
-  
-  }
 
+}
 
+}
 
-  let stack = new Stack();
-  stack.push('alpha');
-  stack.push('beta');
-  stack.push('charlie');
+  let data = "([{}])"
+  let data2 = "([{])"
 
-  console.log(stack);
+let returnValue = bracketCheck(data)
 
+  console.log(returnValue);
+
+  let returnValue2 = bracketCheck(data2)
+
+  console.log(returnValue2);
 
   
-  module.exports = {
-      Stack,
-      Queue
-  };
+  module.exports = bracketCheck;
 
