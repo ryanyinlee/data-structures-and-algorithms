@@ -1,3 +1,39 @@
+# Balanced Brackets
+
+# Challenge Summary
+Write a function called validate brackets
+Arguments: string
+Return: boolean
+representing whether or not the brackets in the string are balanced
+
+Round Brackets : ()
+Square Brackets : []
+Curly Brackets : {}
+
+## Whiteboard Process
+![](codechallenge13uml.PNG)
+
+## Approach & Efficiency
+Efficiency should be O(n) as there is a loop.
+
+## Solution
+Algorithm (Solve Manually)
+- Create a Stack
+- Traverse the data checking it
+If it is a right facing bracket push it to Stack.
+- If the traversal encounters a left facing bracket:
+- Pop() and compare. If it matches the Top then all is good.
+-If not matching, then can return False
+-If any remaining right facing brackets then return False
+
+
+## Credits:
+
+Lots of algo help from: 
+
+https://www.geeksforgeeks.org/check-for-balanced-parentheses-in-an-expression/
+
+
 # Animal Shelter
 
 # Challenge Summary

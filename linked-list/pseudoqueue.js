@@ -9,7 +9,8 @@ class Node {
 
 // don't have to use both stacks - metty82
 // one method is easy
-
+// pseudo queue FIFO
+// stacks FILO
 class PseudoQueue {
     constructor() {
       this.front = new Stack;
@@ -21,22 +22,23 @@ class PseudoQueue {
      newStack.push(value);
     }
   
-    dequeue() {
-  
-      let nodeToRemove = this.front;
-  
+    dequeue() {      
+      // queue 1,2,3
+      // this.front stack 3,2,1      
+      while (this.front.peek()) {
+      let nodeToShift = this.front.pop(); // would be 3      
+      
+      this.back.push(nodeToShift); // take 3 and shift into back stack from front stack
+     };
+     // this.back stack 1,2,3
+
       // change front to be the next node!
-      this.front = nodeToRemove.next;
-  
-      // get rid of the next value from our nodeToRemove
-      nodeToRemove.next = null;
-  
-      // if this is true, there are no nodes after the front.
-      if (!this.front) {
-        this.back = null;
-      }
-  
-      return nodeToRemove.value;
+      if (this.back.peek()){
+        let nodeToRemove = this.back.pop();
+        return nodeToRemove;
+      }      
+      return null;
+     
     }
   
   }
@@ -65,8 +67,7 @@ class PseudoQueue {
     }
   
     // remove the top node
-    pop() {
-  
+    pop() {  
       // grab the first node
       let temp = this.top;
       this.top = temp.next;
@@ -97,10 +98,8 @@ isEmpty() {
     } else {
         return false;
     }
-
 }
-
-}
+};
 
 module.exports = {
     Stack,
