@@ -9,8 +9,9 @@ describe("Can successfully enqueue into a queue", () => {
       let queue = new PseudoQueue();
      queue.enqueue('alpha');
      queue.enqueue('beta');
-
-      expect(queue).toEqual({"back": {"next": null, "value": "beta"}, "front": {"next": {"next": null, "value": "beta"}, "value": "alpha"}});
+      // should be beta, alpha
+      expect(queue.front.top.next.value).toEqual('alpha');
+      expect(queue.front.top.value).toEqual('beta');
     });
   });
 
@@ -19,9 +20,10 @@ describe("Can successfully enqueue into a queue", () => {
   describe("Can successfully instantiate an empty queue", () => {
     it("Empty queue should work..", () => {
       let queue = new PseudoQueue();
-  
+      
 
-      expect(queue.isEmpty()).toEqual(true);
+      expect(queue.front.peek()).toEqual(null);
+      expect(queue.back.peek()).toEqual(null);
     });
   });
 
@@ -31,11 +33,12 @@ describe("Can successfully enqueue into a queue", () => {
     it("Dequeue method should work on queue.", () => {
       let queue = new PseudoQueue();
       
-      queue.enqueue('alpha');
+      queue.enqueue('alpha'); // first in first out
       queue.enqueue('beta');
-      queue.dequeue(); // should remove alpha
+      let returnValue = queue.dequeue(); // should remove alpha
 
-      expect(queue).toEqual({"back": {"next": null, "value": "beta"}, "front": {"next": null, "value": "beta"}});
+      expect(queue.back.top.value).toEqual('beta');
+      expect(returnValue).toEqual('alpha');
     });
   });
 

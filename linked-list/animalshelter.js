@@ -35,23 +35,22 @@ class Node {
             return null;
         }  
         if (pref === "dog") {
-
-
+            let nodeToRemove = this.front;
+            
+            // change front to be the next node!
+            this.front = nodeToRemove.next;
+        
+            // get rid of the next value from our nodeToRemove
+            nodeToRemove.next = null;
+        
+            // if this is true, there are no nodes after the front.
+            if (!this.front) {
+              this.back = null;
+            }
+        
+            return nodeToRemove.value;
         }
-      let nodeToRemove = this.front;
-  
-      // change front to be the next node!
-      this.front = nodeToRemove.next;
-  
-      // get rid of the next value from our nodeToRemove
-      nodeToRemove.next = null;
-  
-      // if this is true, there are no nodes after the front.
-      if (!this.front) {
-        this.back = null;
-      }
-  
-      return nodeToRemove.value;
+
     }
   
     // return the value at the front of the queue
