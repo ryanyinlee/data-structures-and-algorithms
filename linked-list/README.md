@@ -15,6 +15,7 @@ Define a method for each of the depth first traversals:
 pre order
 in order
 post order which returns an array of the values, ordered appropriately.
+
 Any exceptions or errors that come from your code should be semantic, capture-able errors. For example, rather than a default error thrown by your language, your code should raise/throw a custom, semantic error that describes what went wrong in calling the methods you wrote for this lab.
 
 **Binary Search Tree**
@@ -41,10 +42,20 @@ Returns false for the `contains` meethod, given an existing or non-existing node
 
 
 ## Approach & Efficiency
-The big O for this is olog(n)
+The big O for this is O(log(n))
 
 ## API
-<!-- Description of each method publicly available in each of your trees -->
+
+`preOrder` - goes through the tree in preOrder
+
+`inOrder` - goes through the tree in inOrder
+
+`postOrder` - goes through the tree in postOrder
+
+`add(value)` - adds to the Binary Search Tree (should add in appropriate spot) please don't add a value already in the tree.
+
+`contains(value)` - sees if the value exists in the tree by searching it going left or right depending on the start value. returns true or false.
+
 
 ## Credit
 
