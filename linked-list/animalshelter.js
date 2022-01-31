@@ -48,6 +48,7 @@ class Node {
             
             this.back.push(nodeToShift); 
            };
+           
         let pushThis = this.front.pop();
         this.back.push(pushThis);
         // if (pref === "dog" ) {         
