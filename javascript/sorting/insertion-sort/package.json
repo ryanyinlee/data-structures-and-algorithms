@@ -1,0 +1,15 @@
+{
+  "name": "insertion-sort",
+  "version": "1.0.0",
+  "description": "# Challenge Summary Review the pseudocode below, then trace the algorithm by stepping through the process with the provided sample array. Document your explanation by creating a blog article that shows the step-by-step output after each iteration through some sort of visual.",
+  "main": "insertion-sort.js",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^27.5.1"
+  }
+}
