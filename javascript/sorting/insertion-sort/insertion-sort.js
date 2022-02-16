@@ -24,6 +24,6 @@ function insertionSort(arr) {
 
   let result = insertionSort(arrtest);
 
-    console.log(result)
+    //console.log(result)
 
 module.exports = insertionSort;
