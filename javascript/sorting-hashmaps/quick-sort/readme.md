@@ -65,7 +65,7 @@ Time: O(n^2)?
 Space: O(logn)
 
 ## Solution
-<!-- Show how to run your code, and examples of it in action -->
+see quick-sort.js
 
 ## Credit
 
