@@ -11,7 +11,10 @@ Using your Hashmap implementation as a part of your algorithm, return a set of v
 ![](codechallenge32uml.PNG)
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+O(m * h)
+
+m - number of nodes in first trees
+h - height of second tree
 
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
@@ -25,3 +28,5 @@ Edge Case (if applicable/obvious)
 ## Credit
 
 https://www.geeksforgeeks.org/print-common-nodes-in-two-binary-search-trees/
+
+https://github.com/joric/interviewbit/blob/master/programming/random/common-nodes-in-two-binary-search-trees.md
