@@ -77,6 +77,7 @@ function  repeatedNums(string){
     let common = [];
     
     for (let i = 0; i < string.length; i+=1){
+        
         if(stringTable.contains(string[i])){
             common.push(string[i]);
         }

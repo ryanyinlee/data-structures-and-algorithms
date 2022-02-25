@@ -27,6 +27,8 @@ Edge Case (if applicable/obvious)
 
 ## Credit
 
+jamiguel23
+
 https://www.geeksforgeeks.org/print-common-nodes-in-two-binary-search-trees/
 
 https://github.com/joric/interviewbit/blob/master/programming/random/common-nodes-in-two-binary-search-trees.md
