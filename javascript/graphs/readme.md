@@ -1,12 +1,10 @@
 # Graphs
 
-Implement your own Graph. The graph should be represented as an adjacency list, and should include the following methods:
-
-## Challenge
-
+Implement your own Graph. The graph should be represented as an adjacency list.
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+Time: Most methods are O(1)
+Space: Should only take as much space as there are nodes.
 
 ## API
 `add node`
@@ -33,3 +31,22 @@ Include the weight of the connection in the returned collection
 `size`
 Arguments: none
 Returns the total number of nodes in the graph
+
+## Structure and Testing
+
+Node can be successfully added to the graph
+An edge can be successfully added to the graph
+A collection of all nodes can be properly retrieved from the graph
+All appropriate neighbors can be retrieved from the graph
+Neighbors are returned with the weight between nodes included
+The proper size is returned, representing the number of nodes in the graph
+A graph with only one node and edge can be properly returned
+An empty graph properly returns null
+
+## Credits
+
+JavaScript Algorithms and Data Structures Masterclass
+
+https://www.geeksforgeeks.org/implementation-graph-javascript/
+
+https://adrianmejia.com/data-structures-for-beginners-graphs-time-complexity-tutorial/#Node.getAdjacents
