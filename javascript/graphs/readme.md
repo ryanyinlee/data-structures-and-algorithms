@@ -32,6 +32,11 @@ Include the weight of the connection in the returned collection
 Arguments: none
 Returns the total number of nodes in the graph
 
+`breadth first`
+Arguments: Node
+Return: A collection of nodes in the order they were visited.
+Display the collection
+
 ## Structure and Testing
 
 Node can be successfully added to the graph
