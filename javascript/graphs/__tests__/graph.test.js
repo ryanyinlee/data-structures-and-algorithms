@@ -1,6 +1,6 @@
 'use strict';
 
-const Graph = require ('../graph')
+const Graph = require ('../graphs/graph')
 
 
 describe("Graph Testing", () => {
@@ -84,7 +84,7 @@ describe("Graph Testing", () => {
       });
 
 
-      it("Breadth first traversal functionas it should.", () => {
+      it("Breadth first traversal functions as it should.", () => {
         const graph = new Graph();  
         graph.add('Seattle');
         graph.add('New York');
@@ -96,6 +96,19 @@ describe("Graph Testing", () => {
         let returnValue = graph.breadthFirst('Seattle');
 
         expect(returnValue).toEqual([ 'Seattle', 'Palo Alto', 'New York', 'San Francisco' ]);
+      });
+
+      it("Depth first traversal functions as it should.", () => {
+        const graph = new Graph();  
+        graph.add('Seattle');
+        graph.add('New York');
+        graph.add('Palo Alto');
+        graph.add('San Francisco');
+        graph.addEdge('Seattle', 'Palo Alto');
+        graph.addEdge('Seattle', 'New York');
+        graph.addEdge('Seattle', 'San Francisco');
+        let returnValue = graph.depthFirst('Seattle');
+        expect(returnValue).toEqual([ 'Seattle', 'San Francisco', 'New York', 'Palo Alto' ]);
       });
 
   });

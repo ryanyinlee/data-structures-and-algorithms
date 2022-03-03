@@ -37,6 +37,12 @@ Arguments: Node
 Return: A collection of nodes in the order they were visited.
 Display the collection
 
+`business trip`
+Arguments: graph, array of city names
+Return: cost or null
+
+Determine whether the trip is possible with direct flights, and how much it would cost.
+
 ## Structure and Testing
 
 Node can be successfully added to the graph
