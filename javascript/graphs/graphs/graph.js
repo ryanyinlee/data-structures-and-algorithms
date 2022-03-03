@@ -1,7 +1,5 @@
 'use strict';
 
-const { resetDefaultConfig } = require("eslint/lib/rule-tester/rule-tester");
-
 // class Vertex {
 //     constructor(value) {
 //       this.value = value; 
@@ -109,46 +107,73 @@ while(queue.length){
 return collection;
 }
 
+
+// Name: Depth first
+// Arguments: Node (Starting point of search)
+// Return: A collection of nodes in their pre-order depth-first traversal order
+// Program output: Display the collection
+
+depthFirst(node) {
+let stack = [node];
+let collection =[];
+let visited = {};
+visited[node] = true;
+let currentNode;
+while(stack.length > 0) {
+    currentNode = stack.pop();
+    collection.push(currentNode);
+    
+    Array.from(this.adjacencyList.get(currentNode)).forEach(neighbor => {
+        if(!visited[neighbor]){
+            visited[neighbor] = true;
+            stack.push(neighbor);
+        }
+    })
+}
+return collection;
 }
 
-let graph = new Graph();
+}
 
-graph.add('Seattle');
-graph.add('New York');
-graph.add('Palo Alto');
-graph.add('San Francisco');
-console.log("get the nodes", graph.getNodes());
-console.log(graph);
-graph.addEdge('Seattle', 'Palo Alto');
-graph.addEdge('Seattle', 'New York');
-graph.addEdge('Seattle', 'San Francisco');
-graph.getNeighbors('Palo Alto');
-graph.getNeighbors('Seattle');
-console.log('graph size is ', graph.size());
+// let graph = new Graph();
 
-let result = graph.breadthFirst('Seattle');
-console.log(result);
+// graph.add('Seattle');
+// graph.add('New York');
+// graph.add('Palo Alto');
+// graph.add('San Francisco');
+// console.log("get the nodes", graph.getNodes());
+// console.log(graph);
+// graph.addEdge('Seattle', 'Palo Alto');
+// graph.addEdge('Seattle', 'New York');
+// graph.addEdge('Seattle', 'San Francisco');
+// graph.getNeighbors('Palo Alto');
+// graph.getNeighbors('Seattle');
+// console.log('graph size is ', graph.size());
+
+// let result = graph.breadthFirst('Seattle');
+// console.log(result);
 
 module.exports = Graph;
 
 
-// let g = new Graph();
+let g = new Graph();
 
-// g.add("A");
-// g.add("B");
-// g.add("C");
-// g.add("D");
-// g.add("E");
-// g.add("F");
+g.add("A");
+g.add("B");
+g.add("C");
+g.add("D");
+g.add("E");
+g.add("F");
 
 
-// g.addEdge("A","B");
-// g.addEdge("A","C");
-// g.addEdge("B","D");
-// g.addEdge("C","E");
-// g.addEdge("D","E");
-// g.addEdge("D","F");
-// g.addEdge("E","F");
+g.addEdge("A","B");
+g.addEdge("A","C");
+g.addEdge("B","D");
+g.addEdge("C","E");
+g.addEdge("D","E");
+g.addEdge("D","F");
+g.addEdge("E","F");
 
 // let result = g.breadthFirst("A");
-// console.log(result);
+let result = g.depthFirst("A");
+console.log(result);
